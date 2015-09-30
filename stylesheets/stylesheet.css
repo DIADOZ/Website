@@ -1,0 +1,142 @@
+/*
+How To Order DIADOZ CSS Stylesheets
+1. Positioning
+2. Box model
+3. Typographic
+4. Visual
+*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+	overflow-y: hidden;
+	text-decoration-color: #1b1b1b;
+    background-color: #050505;
+}
+
+.startLogo {
+	margin-left: 60px; 
+	margin-right: 60px;
+}
+
+.supremeBody {
+	position: relative;
+	overflow-y: hidden;
+
+    width: 1300px;
+    height: 100%;
+    margin:0px;
+    padding:0px;
+}
+
+.mainTable {
+	position: absolute;
+    top: 50%;
+
+    height: 80%;
+    margin-top: -7%;
+
+    border-color: #565656;
+}
+
+td.text {
+    margin: 100px;
+    padding-top: 30px;
+    padding-left: 5px;
+    padding-right: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 250px;
+    font-size: 12px;
+    vertical-align: 20px;
+    text-align: center;
+    /*background: rgba(255, 255, 255, 0.67);*/
+    color: white;
+    border: 1px solid white;
+}
+
+/************** VISUAL POST STYLING *************/
+	.visualPost {
+		padding-left: 100px;
+		padding-right: 100px;
+		border: 1px solid white;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		width: 750px;
+		height: 100%;
+		vertical-align: top;
+		text-transform: uppercase;
+	}
+	.visualPost>p{
+		color: white;
+	}
+	.visualPost > a:link, .visualPost > a:visited {
+		color: white;
+		font-size: 20px;
+		text-decoration: none;
+		font-style: italic;
+		display: inline-block;
+		width: 100%;
+	}
+	.visualPost > a:hover {
+		background: rgba(248, 248, 255, 0.80);
+		color: black;
+	}
+/************** VISUAL POST STYLING *************/
+
+
+
+/************** FEATURED POST STYLING *************/
+	.featuredPost {
+		margin: 100px;
+		padding-right: 30px;
+		/*border: 1px solid white;*/
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		width: 800px;
+		height: 100%;
+		vertical-align: top;
+		text-transform: uppercase;
+
+	}
+	.featuredPost > a:link, .featuredPost > a:visited {
+		color: white;
+		font-size: 20px;
+		text-decoration: none;
+		font-style: italic;
+		display: inline-block;
+		width: 100%;
+	}
+	.featuredPost > a:hover {
+		background: rgba(248, 248, 255, 0.80);
+		color: black;
+	}
+/************** FEATURED POST STYLING *************/
+
+
+
+/************** OVERLAY STYLING *************/
+	#container{
+		display: none;
+		position: fixed;
+		overflow-x: hidden;
+		margin: 0px;
+		padding: 0px;
+		top: 0; 
+  		left: 0; 
+		z-index: 3;
+		width: 100%;
+  		height: 100%; 
+		background: #FFF;
+		color:#000;
+	}
+	#specialBox {
+		display: none;
+		position: absolute;
+		overflow: visible;
+		margin: 0px;
+		width: 500px; 
+		height: 300px;
+		background: #FFF;
+		color:#000;
+	}
+/************** OVERLAY STYLING *************/

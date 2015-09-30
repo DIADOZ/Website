@@ -1,0 +1,45 @@
+<?php
+include 'dbConnect.php';
+
+$sql = "SELECT COUNT(Post_ID) FROM posts WHERE Post_Publish='1'";
+$query = mysqli_query($conn, $sql);
+$row = mysqli_fetch_row($query);
+
+$total_rows = $row[0];
+
+$rpl = 10;
+
+$last = ceil($total_rows/$rpl);
+
+if($last < 1){
+	$last = 1;
+}
+
+mysqli_close($conn);
+?>
+
+
+<script>
+var rpp = <?php echo $rpp; ?>; // results per page
+var last = <?php echo $last; ?>; // last page number
+function request_page(pn){
+	var loading = document.getElementById("loading");
+	var pagination_controls = document.getElementById("pagination_controls");
+	loading.innerHTML = "loading results ...";
+	var XML = new XMLHttpRequest();
+    XML.open("POST", "pagination_parser.php", true);
+    XML.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    XML.onreadystatechange = function() {
+	    if(XML.readyState == 4 && XML.status == 200) {
+			var dataArray = XML.responseText.split("||");
+			var html_output = "";
+		    for(i = 0; i < dataArray.length - 1; i++){
+				var itemArray = dataArray[i].split("|");
+				html_output += "ID: "+itemArray[0]+" - Testimonial from <b>"+itemArray[1]+"</b><XML>";
+			}
+			loading.innerHTML = html_output;
+	    }
+    }
+    XML.send("rpp="+rpp+"&last="+last+"&pn="+pn);
+}
+</script>
