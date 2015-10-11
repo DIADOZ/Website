@@ -10,7 +10,9 @@
 	if($result_overlay){
 		while($row_overlay = mysqli_fetch_assoc($result_overlay)){ ?>
 			
-			<h1><?php echo $row_overlay['Post_Title']; echo $row_overlay['Post_Date']; ?></h1>
+			<h1>
+                <?php echo $row_overlay['Post_Title']; echo $row_overlay['Post_Date']; ?>
+            </h1>
 			<img src="images/<?php echo $row_overlay['Post_Image_Embed']; ?>" width="100%">
 			<?php
 			if (!$row_overlay['Post_Video_Embed'] == null){
@@ -21,7 +23,9 @@
 			}
 			?>
 		<?php echo $row_overlay['Post_Credit']; ?>
-		<p><?php echo $row_overlay['Post_Content']; ?><?php echo $row_overlay['Post_Votes']; ?></p>
+		<p>
+            <?php echo $row_overlay['Post_Content']; ?><?php echo $row_overlay['Post_Votes']; ?>
+        </p>
 		<?php
 		}
 	}
